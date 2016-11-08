@@ -18,8 +18,8 @@
 
 function y = A_fhp(x, OMEGA)
 
-n = round(sqrt(length(x)));
+n = round(sqrt(length(x))); % 得到小n
 
-yc = 1/n*fft2(reshape(x,n,n));
-y = [yc(1,1); sqrt(2)*real(yc(OMEGA)); sqrt(2)*imag(yc(OMEGA))];
+yc = 1/n*fft2(reshape(x,n,n)); %变成N=n*n以后计算二维傅里叶变换
+y = [yc(1,1); sqrt(2)*real(yc(OMEGA)); sqrt(2)*imag(yc(OMEGA))]; 
 

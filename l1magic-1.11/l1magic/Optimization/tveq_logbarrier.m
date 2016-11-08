@@ -25,17 +25,17 @@
 % lbtol - The log barrier algorithm terminates when the duality gap <= lbtol.
 %         Also, the number of log barrier iterations is completely
 %         determined by lbtol.
-%         Default = 1e-3.
+%         Default = 1e-3.   % 可忍受的误差，在此误差下停止迭代
 %
 % mu - Factor by which to increase the barrier constant at each iteration.
-%      Default = 10.
+%      Default = 10.   迭代的步长
 %
 % slqtol - Tolerance for SYMMLQ; ignored if A is a matrix.
-%     Default = 1e-8.
+%     Default = 1e-8.   可忍受的误差 如果是矩阵则忽略此参数
 %
 % slqmaxiter - Maximum number of iterations for SYMMLQ; ignored
 %     if A is a matrix.
-%     Default = 200.
+%     Default = 200.    最大迭代次数
 %
 % Written by: Justin Romberg, Caltech
 % Email: jrom@acm.caltech.edu
