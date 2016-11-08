@@ -30,11 +30,13 @@ A = @(z) A_fhp(z, OMEGA);
 At = @(z) At_fhp(z, OMEGA, n);
 
 % measurements
-y = A(x);
+y = A(x); % 测量值
 
 % min l2 reconstruction (backprojection)
-xbp = At(y);
-Xbp = reshape(xbp,n,n);
+xbp = At(y); % minimal energy reconstruction initial guess 初始猜测的最小能量恢复
+Xbp = reshape(xbp,n,n); % 最小能量恢复的图
+
+
 
 % recovery
 tic
@@ -43,3 +45,14 @@ disp(sprintf('Original TV = %8.3f', tvI));
 xp = tveq_logbarrier(xbp, A, At, y, 1e-1, 2, 1e-8, 600);
 Xtv = reshape(xp, n, n);
 toc
+
+figure;
+subplot(1,2,1);
+title('minimal energy reconstruction');
+imshow(Xbp);
+subplot(1,2,2);
+title('l1-magic reconstruction');
+imshow(Xtv);
+
+
+

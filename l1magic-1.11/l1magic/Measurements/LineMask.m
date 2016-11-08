@@ -41,7 +41,7 @@ Mh(N/2+2:N,:) = 0;
 Mh(N/2+1,N/2+1:N) = 0;
 
 
-M = ifftshift(M);
-mi = find(M);
+M = ifftshift(M);%ifftshift 对换数据左右两边
+mi = find(M);    %find(M) 找出M中非零元素的位置
 Mh = ifftshift(Mh);
 mhi = find(Mh);
