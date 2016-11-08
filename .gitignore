@@ -1,0 +1,13 @@
+# on Mac
+.DS_Store
+l1magic-1.11/__MACOSX/
+
+# tex 
+
+*.eps
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+

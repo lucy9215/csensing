@@ -19,7 +19,7 @@ toc
 figure;
 plot(x_r,'k.-');%绘出x的恢复信号
 hold on;
-plot(x,'r');%绘出原信号x
+plot(x,'b');%绘出原信号x
 hold off;
 legend('Recovery','Original')
 fprintf('\n恢复残差：');
