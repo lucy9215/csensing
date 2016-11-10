@@ -37,11 +37,12 @@ end
 % upper half plane mask (not including origin)
 Mh = zeros(N);
 Mh = M;
-Mh(N/2+2:N,:) = 0; % 取上半部分
+Mh(N/2+2:N,:) = 0; % 取上半部分，下半部分赋值0
 Mh(N/2+1,N/2+1:N) = 0; % 去掉了一根线（应该是避免重复）
 
 
 M = ifftshift(M);%ifftshift 对换数据左右两边（我看结果是对换了上下和左右） 把星形变成了四个角一样的
 mi = find(M);    %find(M) 找出M中非零元素的位置
-Mh = ifftshift(Mh); % 也是对换了上下和左右
+Mh = ifftshift(Mh); % 也是对换了上下和左右，于是留下了下半部分非零
 mhi = find(Mh);
+

@@ -25,7 +25,7 @@ L = 22;
 
 % Fourier samples we are given
 [M,Mh,mi,mhi] = LineMask(L,n);
-OMEGA = mhi;
+OMEGA = mhi;    % mhi其实只有一半
 A = @(z) A_fhp(z, OMEGA);      % 函数已输入OMEGA    调用A(x) 相当于调用A_fhp(x,OMEGA)
 At = @(z) At_fhp(z, OMEGA, n); % 函数已输入OMEGA和n 调用At(y) 相当于调用A_fhp(y,OMEGA,n)
 
