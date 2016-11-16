@@ -1,5 +1,7 @@
 % tvqc_logbarrier.m
 %
+% 对应tv P_D 噪声情况下不等式约束的logbarrier求解方法
+% 
 % Solve quadractically constrained TV minimization
 % min TV(x)  s.t.  ||Ax-b||_2 <= epsilon.
 %

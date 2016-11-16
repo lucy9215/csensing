@@ -1,5 +1,7 @@
 % cgsolve.m
-%
+% 
+%  大概是正定系统的求解
+% 
 % Solve a symmetric positive definite system Ax = b via conjugate gradients.
 %
 % Usage: [x, res, iter] = cgsolve(A, b, tol, maxiter, verbose)

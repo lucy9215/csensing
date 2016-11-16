@@ -1,5 +1,7 @@
 % l1dantzig_pd.m
-%
+% 
+% 对应P_D l1 dantzig的pd求解法
+% 
 % Solves
 % min_x  ||x||_1  subject to  ||A'(Ax-b)||_\infty <= epsilon
 %

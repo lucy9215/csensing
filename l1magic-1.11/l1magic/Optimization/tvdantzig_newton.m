@@ -1,5 +1,7 @@
 % tvdantzig_newton.m
 %
+% 对应P_D 噪声情况下不等式约束的newton求解方法
+% 
 % Newton iterations for TV Dantzig log-barrier subproblem.
 %
 % Usage : [xp, tp, niter] = tvdantzig_newton(x0, t0, A, At, b, epsilon, tau, 

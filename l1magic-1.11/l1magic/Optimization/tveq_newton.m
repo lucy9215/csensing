@@ -1,5 +1,7 @@
 % tveq_newton.m
 %
+% 对应tv P_1 等式约束的newton求解方法
+% 
 % Newton algorithm for log-barrier subproblems for TV minimization
 % with equality constraints.
 %

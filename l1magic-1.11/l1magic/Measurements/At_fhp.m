@@ -24,5 +24,5 @@ K = length(y);
 
 fx = zeros(n,n);  % 初始化频域
 fx(1,1) = y(1);   % 初始化均值
-fx(OMEGA) = sqrt(2)*(y(2:(K+1)/2) + i*y((K+3)/2:K)); % 在频域的OMEGA处赋值
+fx(OMEGA) = sqrt(2)*(y(2:(K+1)/2) + i*y((K+3)/2:K)); % 在频域的OMEGA处赋值 % 这里的y其实是一维向量，所以从中取出对应的OMEGA位置的向量
 x = reshape(real(n*ifft2(fx)), n*n, 1);    % 对此

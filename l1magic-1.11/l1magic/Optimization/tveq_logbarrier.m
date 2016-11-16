@@ -1,5 +1,7 @@
 % tveq_logbarrier.m
 %
+% 对应tv P_1 等式约束的logbarrier求解方法
+% 
 % Solve equality constrained TV minimization
 % min TV(x)  s.t.  Ax=b.
 %
@@ -44,20 +46,23 @@
 
 function xp = tveq_logbarrier(x0, A, At, b, lbtol, mu, slqtol, slqmaxiter)  
 
-largescale = isa(A,'function_handle'); 
+% 判断是不是large scale模式，如果是largescale为1.这里如果A用的是fuction handle，那么判定为启用large scale模式
+largescale = isa(A,'function_handle');  
 
-if (nargin < 5), lbtol = 1e-3; end
-if (nargin < 6), mu = 10; end
-if (nargin < 7), slqtol = 1e-8; end
-if (nargin < 8), slqmaxiter = 200; end
+% 默认参数的判断
+if (nargin < 5), lbtol = 1e-3; end      % logbarrier停止迭代的误差
+if (nargin < 6), mu = 10; end           % 步长默认10
+if (nargin < 7), slqtol = 1e-8; end     % 可以忍受的误差
+if (nargin < 8), slqmaxiter = 200; end  % 最大迭代次数
 
-newtontol = lbtol;
-newtonmaxiter = 50;
+newtontol = lbtol;    % 停止迭代的误差
+newtonmaxiter = 50;   % 最大迭代次数
 
-N = length(x0);
-n = round(sqrt(N));
+N = length(x0);       % 传入的是一维向量，这里N=nxn
+n = round(sqrt(N));   % 通过N计算出n
 
 % create (sparse) differencing matrices for TV
+% spdiags 取出非零元素
 Dv = spdiags([reshape([-ones(n-1,n); zeros(1,n)],N,1) ...
   reshape([zeros(1,n); ones(n-1,n)],N,1)], [0 1], N, N);
 Dh = spdiags([reshape([-ones(n,n-1) zeros(n,1)],N,1) ...

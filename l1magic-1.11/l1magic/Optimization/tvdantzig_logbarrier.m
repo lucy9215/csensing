@@ -1,5 +1,7 @@
 % tvdantzig_logbarrier.m
 %
+% 对应P_D 噪声情况下不等式约束的logbarrier求解方法
+% 
 % Solve the total variation Dantzig program
 %
 % min_x TV(x)  subject to  ||A'(Ax-b)||_\infty <= epsilon

@@ -41,6 +41,7 @@ Xbp = reshape(xbp,n,n); % 最小能量恢复的图 reshape把向量组织成图
 % recovery
 tic
 tvI = sum(sum(sqrt([diff(X,1,2) zeros(n,1)].^2 + [diff(X,1,1); zeros(1,n)].^2 ))); % 最开始的TV值
+% TV的值是每个像素sqrt(横向的‘相邻元素的差值’^2+纵向‘相邻元素的差值’^2)，总nxn个像素的gradient总和
 disp(sprintf('Original TV = %8.3f', tvI));
 xp = tveq_logbarrier(xbp, A, At, y, 1e-1, 2, 1e-8, 600); % 进行优化
 Xtv = reshape(xp, n, n); % 范数优化输出的图像

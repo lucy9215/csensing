@@ -1,5 +1,7 @@
 % l1decode_pd.m
-%
+% 
+% 对应P_2 解码的pd求解法
+% 
 % Decoding via linear programming.
 % Solve
 % min_x  ||b-Ax||_1 .

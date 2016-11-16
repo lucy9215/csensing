@@ -1,5 +1,7 @@
 % l1qc_newton.m
 %
+% 对应P_D 噪声情况下不等式约束的newton求解方法
+%
 % Newton algorithm for log-barrier subproblems for l1 minimization
 % with quadratic constraints.
 %

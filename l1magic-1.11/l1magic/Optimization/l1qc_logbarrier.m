@@ -1,5 +1,7 @@
 % l1qc_logbarrier.m
-%
+% 
+% 对应P_D 噪声情况下不等式约束的logbarrier求解方法
+% 
 % Solve quadratically constrained l1 minimization:
 % min ||x||_1   s.t.  ||Ax - b||_2 <= \epsilon
 %

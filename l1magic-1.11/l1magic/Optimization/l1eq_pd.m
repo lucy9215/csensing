@@ -1,5 +1,7 @@
 % l1eq_pd.m
-%
+% 
+% 对应P_1 等式约束的pd求解
+% 
 % Solve
 % min_x ||x||_1  s.t.  Ax = b
 %
